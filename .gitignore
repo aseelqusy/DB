@@ -36,3 +36,53 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# ========== IntelliJ IDEA ==========
+.idea/
+*.iml
+out/
+*.iws
+*.ipr
+
+# ========== Build Directories ==========
+/target/
+/build/
+
+# ========== OS-specific ==========
+.DS_Store
+Thumbs.db
+
+# ========== Logs ==========
+*.log
+
+# ========== JavaFX Cache ==========
+*.class
+
+# ========== Maven ==========
+.mvn/
+!**/src/main/**
+!**/src/test/**
+dependency-reduced-pom.xml
+
+# ========== Gradle ==========
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ========== Environment/Settings Files ==========
+*.env
+*.sqlite
+*.db
+
+# ========== VS Code Settings  ==========
+.vscode/
+
+# ========== Personal Notes ==========
+*.bak
+*.tmp
+*.swp
+
+# ========== Exclude Generated Files ==========
+*.class
+*.jar
+*.war
+*.ear
