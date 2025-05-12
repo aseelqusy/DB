@@ -76,3 +76,19 @@
     -fx-background-color: #f06292;
     -fx-text-fill: white;
 }
+.profile-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.profile-menu:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: #ff4d4d;
+}
+
+.user-avatar {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 3, 0, 0, 1);
+
+}
