@@ -45,6 +45,7 @@ public class LoginController {
 
         if (loggedInUser != null) {
             String role = loggedInUser.getRole();
+            Session.setCurrentUser(loggedInUser); // ضروري جدًا
             System.out.println("Logged in role: " + role);
 
             try {

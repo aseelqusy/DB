@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,16 +33,24 @@ public class HomeController {
     @FXML
     public void initialize() {
         if (Session.getCurrentUser() == null) {
-            System.out.println("No user session found!");
+            System.out.println("No user session found.");
+            adminDashboardBtn.setVisible(false);
+            adminDashboardBtn.setManaged(false);
             return;
         }
 
-        if (Session.getCurrentUser().getRole().equalsIgnoreCase("admin")) {
+        String role = Session.getCurrentUser().getRole();
+        System.out.println("Logged in as: " + role);
+
+        if (role.equalsIgnoreCase("admin")) {
             adminDashboardBtn.setVisible(true);
+            adminDashboardBtn.setManaged(true);
         } else {
             adminDashboardBtn.setVisible(false);
+            adminDashboardBtn.setManaged(false);
         }
     }
+
 
     @FXML
     private void goToProducts(ActionEvent event) {
@@ -81,8 +90,16 @@ public class HomeController {
     private void filterGames(ActionEvent event) {
         openProductsPage("games");
     }
+
     @FXML
     private void goToAdminDashboard() {
+        String role = Session.getCurrentUser().getRole();
+
+        if (!role.equalsIgnoreCase("admin")) {
+            showAlert("Access Denied", "You do not have permission to access the Admin Dashboard.");
+            return;
+        }
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/admin_dashboard.fxml"));
             Parent root = loader.load();
@@ -90,10 +107,20 @@ public class HomeController {
             stage.setScene(new Scene(root));
             stage.setTitle("Admin Dashboard");
             stage.show();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            showAlert("Error", "Failed to load the Admin Dashboard.");
         }
     }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
 
     @FXML
     private void handleLogout() {

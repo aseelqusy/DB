@@ -3,9 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.ecommerce.controllers.AdminProductController" prefWidth="1200" prefHeight="700"
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.ecommerce.controllers.AdminProductController"
+            prefWidth="1200" prefHeight="700"
             stylesheets="@/styles/admin.css">
 
+    <!-- 🔝 Top Bar -->
     <top>
         <HBox spacing="20" alignment="CENTER_LEFT" styleClass="dashboard-header">
             <padding>
@@ -16,12 +19,21 @@
             <Region HBox.hgrow="ALWAYS"/>
             <TextField fx:id="searchField" promptText="Search..." />
             <Button text="Search" onAction="#handleSearch"/>
+            <Button text="Add" onAction="#handleAdd"/>
+            <Button text="Edit" onAction="#handleEdit"/>
+            <Button text="Delete" onAction="#handleDelete"/>
+            <Button text="Refresh" onAction="#handleRefresh"/>
         </HBox>
-
     </top>
 
+    <!-- 📦 Main Content -->
     <center>
-        <VBox>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- Product Table -->
             <TableView fx:id="productTable" prefHeight="350">
                 <columns>
                     <TableColumn fx:id="idCol" text="ID" prefWidth="50" />
@@ -35,7 +47,7 @@
                 </columns>
             </TableView>
 
-            <!-- Product Form Container (Initially Hidden) -->
+            <!-- Product Form -->
             <VBox fx:id="formContainer" spacing="10" visible="false" managed="false" alignment="CENTER" styleClass="form-box">
                 <Label fx:id="formTitle" styleClass="form-title" />
 
@@ -49,8 +61,8 @@
                 <TextField fx:id="genreField" promptText="Genre" />
 
                 <HBox spacing="10">
-                    <Button fx:id="saveButton" text="Save" onAction="#handleSave" />
-                    <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancel" />
+                    <Button fx:id="saveButton" text="💾 Save" onAction="#handleSave" />
+                    <Button fx:id="cancelButton" text="❌ Cancel" onAction="#handleCancel" />
                 </HBox>
             </VBox>
         </VBox>
