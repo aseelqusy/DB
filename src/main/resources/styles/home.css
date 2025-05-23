@@ -77,10 +77,13 @@
     -fx-text-fill: white;
 }
 .profile-menu {
-    -fx-background-color: transparent;
-    -fx-text-fill: #fff;
-    -fx-font-weight: bold;
-    -fx-cursor: hand;
+    -fx-background-color: #fff0f5;
+    -fx-text-fill: #444;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20;
+    -fx-padding: 6 12;
+    -fx-border-radius: 20;
+    -fx-border-color: #ccc;
 }
 
 .profile-menu:hover {

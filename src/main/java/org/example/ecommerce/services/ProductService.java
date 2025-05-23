@@ -23,7 +23,8 @@ public class ProductService {
 
     public List<Product> getProductsByCategory(String category) {
         List<Product> list = new ArrayList<>();
-        String query = "SELECT * FROM products WHERE category = ?";
+        String query = "SELECT * FROM products WHERE LOWER(category) = LOWER(?)";
+
 
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, category);

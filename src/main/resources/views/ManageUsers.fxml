@@ -13,11 +13,12 @@
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
+            <Button text="Back" onAction="#goBack" />
             <Label text="👥 Manage Users" styleClass="dashboard-title"/>
             <Region HBox.hgrow="ALWAYS"/>
             <TextField fx:id="searchField" promptText="Search by email..." />
             <Button text="Search" onAction="#handleSearch"/>
-            <Button text="🔙" onAction="#goBack"/>
+
         </HBox>
     </top>
 

@@ -14,7 +14,7 @@
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
-            <Button text="🔙" onAction="#goBack" />
+            <Button text="Back" onAction="#goBack" />
             <Label text="📦 Manage Products" styleClass="dashboard-title"/>
             <Region HBox.hgrow="ALWAYS"/>
             <TextField fx:id="searchField" promptText="Search..." />

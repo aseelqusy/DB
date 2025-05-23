@@ -15,7 +15,7 @@
             <HBox spacing="20" alignment="CENTER_LEFT" styleClass="navbar">
                 <Button text="← Back" onAction="#goBack" styleClass="back-btn" />
                 <Region HBox.hgrow="ALWAYS" />
-                <MenuButton text="👤 Islam Yasin" styleClass="profile-menu">
+                <MenuButton text="👤 Aseel Qadan" styleClass="profile-menu">
                     <items>
                         <MenuItem text="My Profile" />
                         <MenuItem text="Settings" />

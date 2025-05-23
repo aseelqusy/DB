@@ -3,6 +3,7 @@ package org.example.ecommerce.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -82,6 +83,7 @@ public class HomeController {
         openProductsPage("computers");
     }
 
+
     @FXML
     private void filterGaming(ActionEvent event) {
         openProductsPage("gaming");
@@ -160,4 +162,51 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+
+    public void goToHome(ActionEvent actionEvent) {
+    }
+
+    public void goToAbout(ActionEvent actionEvent) {
+
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/checkout.fxml"));
+                Parent root = loader.load();
+
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+
+    public void goToBlog(ActionEvent actionEvent) {
+    }
+
+
+    public void goToCart(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/views/Cart.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToContact(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/views/products.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
