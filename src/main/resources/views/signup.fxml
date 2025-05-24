@@ -6,7 +6,8 @@
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.ecommerce.controllers.SignUpController"
-            prefWidth="1280" prefHeight="720">
+            prefWidth="1280" prefHeight="720"
+            stylesheets="@/styles/login.css">
 
 
     <left>

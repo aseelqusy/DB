@@ -17,6 +17,26 @@
     <dependencies>
 
         <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.20.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
@@ -118,13 +138,27 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <repositories>
+
+            <repository>
+                <id>central</id>
+                <url>https://repo.maven.apache.org/maven2</url>
+            </repository>
+
+
         <repository>
             <id>central</id>
             <name>Maven Central</name>
             <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>jaspersoft</id>
+            <url>https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases</url>
         </repository>
     </repositories>
 

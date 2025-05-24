@@ -23,12 +23,13 @@
         <VBox alignment="CENTER" spacing="25">
             <Button text="📦 Manage Products" onAction="#openManageProducts" prefWidth="300" />
             <Button text="👥 Manage Users" onAction="#openManageUsers" prefWidth="300" />
-            <Button text="📊 View Sales Reports" onAction="#openReports" prefWidth="300" />
+            <Button text="📊 Generate Report" onAction="#generateReport"/>
             <Button text="🛒 View Orders" onAction="#openOrders" prefWidth="300" />
             <Button text="🏠 Go to Home Page" onAction="#openHomePage" prefWidth="300"/>
             <Button text="🛍 Go to Products" onAction="#openProductsPage" prefWidth="300"/>
             <Button text="👤 Go to Profile" onAction="#openProfilePage" prefWidth="300"/>
-
+            <Button text="🧺 Manage Cart" onAction="#openCartItems" prefWidth="300"/>
+            <Button text="📦 Manage Orders" onAction="#openOrders" prefWidth="300"/>
         </VBox>
     </center>
 </BorderPane>

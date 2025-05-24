@@ -25,7 +25,6 @@ public class ProductService {
         List<Product> list = new ArrayList<>();
         String query = "SELECT * FROM products WHERE LOWER(category) = LOWER(?)";
 
-
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, category);
             ResultSet rs = stmt.executeQuery();
@@ -43,6 +42,35 @@ public class ProductService {
                 p.setGenre(rs.getString("genre"));
                 list.add(p);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public List<Product> getAllProducts() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT * FROM products";
+
+        try (PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                Product p = new Product(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("description"),
+                        rs.getString("image_path"),
+                        rs.getDouble("price"),
+                        rs.getInt("quantity"),
+                        rs.getString("category")
+                );
+                p.setBrand(rs.getString("brand"));
+                p.setGenre(rs.getString("genre"));
+                list.add(p);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -18,8 +18,11 @@ import org.example.ecommerce.utils.Session;
 
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HomeController {
+
+    @FXML private ImageView centerImage;
 
     @FXML
     private ImageView heroImage;
@@ -50,6 +53,7 @@ public class HomeController {
             adminDashboardBtn.setVisible(false);
             adminDashboardBtn.setManaged(false);
         }
+
     }
 
 

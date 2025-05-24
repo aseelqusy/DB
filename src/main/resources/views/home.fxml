@@ -39,6 +39,7 @@
 
     <center>
         <VBox spacing="0">
+
             <!-- Hero Section -->
             <StackPane prefHeight="400" styleClass="hero-section">
                 <ImageView fx:id="heroImage"
@@ -62,6 +63,14 @@
                 </VBox>
             </StackPane>
 
+            <!-- ✅ RTX Image Section -->
+            <StackPane alignment="CENTER" prefHeight="300">
+                <ImageView fx:id="centerImage"
+                           fitWidth="600"
+                           preserveRatio="true"
+                           StackPane.alignment="CENTER"/>
+            </StackPane>
+
             <!-- Category Section -->
             <VBox alignment="CENTER" spacing="20" styleClass="category-section">
                 <padding>
@@ -76,9 +85,10 @@
                     <Button text="💻 Computers" fx:id="computersBtn" onAction="#filterComputers" styleClass="category-btn"/>
                     <Button text="🎮 Gaming" fx:id="gamingBtn" onAction="#filterGaming" styleClass="category-btn"/>
                 </FlowPane>
-
             </VBox>
+
         </VBox>
     </center>
+
 
 </BorderPane>

@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/views/admin_dashboard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/views/home.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("/styles/home.css").toExternalForm());
             scene.getStylesheets().add(getClass().getResource("/styles/products.css").toExternalForm());

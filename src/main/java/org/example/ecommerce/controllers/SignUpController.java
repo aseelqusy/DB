@@ -46,7 +46,7 @@ public class SignUpController {
             return;
         }
 
-        boolean registered = authService.register(email, password, "user"); // default role
+        boolean registered = authService.register(name ,email, password, "user"); // default role
         if (registered) {
             showAlert("Success", "Account created successfully!");
             goToLogin();

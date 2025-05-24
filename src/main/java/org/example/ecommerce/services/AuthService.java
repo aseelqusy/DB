@@ -37,9 +37,9 @@ public class AuthService {
         return null;
     }
 
-    public boolean register(String email, String password, String role) {
+    public boolean register(String name, String email, String password, String role) {
         String checkQuery = "SELECT COUNT(*) FROM users WHERE email = ?";
-        String insertQuery = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
+        String insertQuery = "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DBConnection.getConnection()) {
             // تحقق من وجود المستخدم أولاً
@@ -53,9 +53,10 @@ public class AuthService {
 
             // إدخال جديد
             try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
-                insertStmt.setString(1, email);
-                insertStmt.setString(2, password);
-                insertStmt.setString(3, role);
+                insertStmt.setString(1, name);   // ✅ تم إضافة الاسم هنا
+                insertStmt.setString(2, email);
+                insertStmt.setString(3, password);
+                insertStmt.setString(4, role);
                 return insertStmt.executeUpdate() > 0;
             }
 
